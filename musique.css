@@ -1,418 +1,865 @@
 * {
     margin: 0;
     padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #4098a4;
+    color: #fff;
+
 }
 
-nav .nav ul {
+article{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: 
+    "head head head"
+    "side-two side-two side-two"
+    "side-one main main";
+}
+
+
+body{
+    animation: display 10s ease-in-out infinite;
+    min-height: 100vh;
+
+}
+@keyframes display {
+    0%{
+        background: url(_594aa1b8-19da-4974-8d62-5de4274efe0f.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    100%{
+        background: url(_c7698989-576d-44d6-a83f-bbb321053c95.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+
+/* header css */
+header{
+    grid-area: head;
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    background: linear-gradient( 45deg, #4098a4,#04383f);
 }
-
-nav .nav ul li {
-    list-style: none;
-    margin: 20px;
-    background-color: black;
-    padding: 3px;
-    border-radius: 5px;
-}
-
-nav .nav ul li:hover {
-    transform: scale(1.2);
-}
-
-nav .nav ul li a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-section .home {
+header .home{
+    background: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 40vh;
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - 4.5rem);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
-    background: url(vecteezy_black-headphones-on-dark-wooden-background-in-ear_8065616.jpg);
 }
-
-section .home img {
-    font-size: 10px;
+header .home .title{
+    background: none;
 }
-
-section .home img:hover {
-    transform: scale(1.05);
+header .home .title h3 span{
+    background: none;
 }
-
-section .home h1 {
-    margin-bottom: 10px;
+header .home .title h1{
+    background: none;
+    font-size: 120px;
+    color: #04383f;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    animation: h1 2s ease-out forwards;
+}
+header .home .title h3{
+    background: none;
     font-size: 60px;
-}
 
-section .home h3 {
-    margin-bottom: 30px;
 }
-
-section .home p {
-    font-size: 24px;
-    margin-bottom: 60px;
-}
-
-section .home button {
-    font-size: 30px;
-    border-radius: 10px;
-}
-
-section .home button a {
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-}
-
-section .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 40vh;
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - 4.5rem);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
-    background: url(vecteezy_headphones-with-cable-making-a-sound-wave-on-a-blue_2263933.jpg);
-}
-
-section .about h1 {
-    margin-bottom: 30px;
-    font-size: 60px;
-}
-
-section .about p {
-    font-size: 24px;
-    margin-bottom: 50px;
+header  p{
+    background: none;
+    font-size: 40px;
     text-align: center;
+    color: #04383f;
+    animation: p 2s ease-out forwards;
+}
+@keyframes h1 {
+    0%{
+        opacity: 0;
+        transform: translateY(-320px);
+    }           
 }
 
-section .about section {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 70px;
+@keyframes p {
+    0%{
+        opacity: 0;
+        transform: translate(320px);
+    }       
 }
 
-section .about section .payment {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 100px;
-}
 
-section .about section .payment h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
+/* aside-right css */
 
-section .about section .payment ul li {
-    list-style: none;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-section .about section .points {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 100px;
-}
-
-section .about section .points h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-section .about section .points ul li {
-    list-style: none;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-section .about h3 {
-    font-size: 24px;
-    margin: 20px;
-}
-
-section .about h2 {
-    font-size: 24px;
-    margin: 20px;
-}
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-.heartbeat {
-    animation: heartbeat 1s infinite;
-    animation-timing-function: ease-in-out;
-    animation-delay: 1s;
-    /* Delay the heartbeat animation */
-}
-
-section .about button {
-    margin-top: 30px;
-    font-size: 30px;
-    border-radius: 10px;
-}
-
-section .about button a {
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-}
-
-section .catalogue {
+aside.right{
+    grid-area: side-two;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 40vh;
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - 4.5rem);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
-    background: url(vecteezy_headphones-on-pink-background-love-music-concept-3d-rendering_8028655.jpg);
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 40px;
+    transition: all .5s linear;
+}
+aside.right ul.icon{
+    display: flex;
+    list-style: none;
+    border-radius: 40px;
+    transition: all .5s linear;
+}
+aside.right ul.icon li img{
+    margin: 0 100px 0;
+    animation: icons 1s linear infinite;
+    border-radius: 40px;
+    transition: all .5s linear;
+}
+aside.right ul.button{
+    display: flex;
+    list-style: none;
+    border-radius: 40px;
+    transition: all .5s linear;
+}
+aside.right ul.button li a img{
+    margin: 0 100px 0;
+    display: none;
+    border-radius: 40px;
+    transition: all .5s linear;
 }
 
-section .catalogue h1 {
+
+aside.right:hover ul.icon li img{
+    display: none;
+}
+aside.right:hover ul.button li a img{
+    display: block;
+}
+aside.right ul.button li a img:hover{
+    animation: button 1s ease-in-out;
+    filter: drop-shadow(5px 5px 5px #04383f);
+}
+
+
+@keyframes icons {
+    0%{
+        transform: rotate(-10deg);
+    } 
+    12.5%{
+        transform: rotate(10deg);
+    }    
+    25%{
+        transform: rotate(-10deg);
+    }    
+    37.5%{
+        transform: rotate(10deg);
+    }    
+    50%{
+        transform: rotate(-10deg);
+    }    
+    62.5%{
+        transform: rotate(10deg);
+    }    
+    75%{
+        transform: rotate(-10deg);
+    }    
+    87.5%{
+        transform: rotate(10deg);
+    }       
+    100%{
+        transform: rotate(0deg);
+    }    
+}
+
+@keyframes button {       
+    0%{
+        transform: rotate(-20deg);
+    }
+    25%{
+        transform: rotate(20deg);
+    }   
+    50%{
+        transform: rotate(-20deg);
+    }   
+    100%{
+        transform: rotate(20deg);
+    }   
+}
+
+
+
+
+/* main css */
+
+main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+main .about h1{
+    text-align: center;
+    font-size: 70px;
+    color: #04383f;
+}
+main .about p{
+    font-size: 30px;
+}
+main .about .ceo{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+main .about .ceo h3{
+    color: #04383f;
+    font-size: 40px;
+}
+main .about .ceo .card{
+    padding: 20px 0 0 0;
+    border-radius: 10px 10px 0 0;
+    box-shadow: -5px -5px 20px #0000006d;
+}
+main .about .ceo .card img{
+    width: 320px;
+    border-radius: 10px 10px 0 0;
+}
+main .about .display{
+    margin-top:20px ;
+    display: flex;
+    flex-direction: column;
+}
+main .about .display .container{
+    display: flex;
+}
+main .about .display .container .card{
+    margin: 0 30px 0 0;
+    padding: 20px 0 0 0;
+    border-radius: 10px 10px 0 0;
+    box-shadow: -5px -5px 20px #0000006d;
+    overflow: hidden;
+}
+main .about .display .container .card img{
+    width: 320px;
+    border-radius: 10px 10px 0 0;
+    transition: all 1s linear;
+}
+main .about .display .container .card img:hover{
+    scale: 1.2;
+}
+main .about .delivery{
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 30px;
-    font-size: 60px;
+}
+main .about .payment{
+    margin-top: 20px;
+}
+main .about .payment h3{
+    color: #04383f;
+    font-size: 50px;
+}
+main .about .payment ul{
+    font-size: 30px;
+    list-style: none;
+}
+main .about .points{
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+main .about .points h2{
+    color: #04383f;
+    font-size: 50px;
+}
+main .about .points .pnts ul.icon{
+    list-style: none;
+    margin-right: 20px;
+    margin-right: 20px;
+}
+main .about .points .pnts ul.icon li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 20px #04383f;
+    border-radius: 20px;
+    width: 50vh;
+    font-size: 30px;
+    overflow: hidden;
+}
+main .about .points .pnts ul.icon li span,
+main .about .points .pnts ul.icon li img{
+    background: none;
+    transition: all 1s linear;
+}
+main .about .points .pnts ul.icon li:hover span{
+    transform: translate(-100%);
+}
+main .about .points .pnts ul.icon li:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+main .about .points .pnts ul.icon li:hover a img{
+    min-width: 100%;
+    align-self: center;
 }
 
-section .catalogue p {
-    font-size: 24px;
+
+main .about span.mark{
+    margin-bottom: 20px;
+    padding: 10px 0 10px 0;
+}
+main .about span.mark h3{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: mark 10s linear infinite;
+}
+main .about span.mark h2{
+    font-size: 30px;
+    text-align: center;
+    animation: mark 10s linear infinite;
+    animation-delay: 5s;
+}
+@keyframes mark {
+    0%{
+        color: #fff;
+        box-shadow: 10px 10px 30px #04383f;
+    }   
+    50%{
+        color: #04383f;
+        box-shadow: none;
+    }   
+    100%{
+        color: #fff;
+        box-shadow: 10px 10px 30px #04383f;
+    }   
+}
+
+
+
+/* aside-left css */
+
+aside.left{
+    grid-area: side-one;
+    display: flex;
+    align-items: center;
+}
+aside.left span{
+    display: flex;
+    align-items: center;
+    transition: all .5s linear;
+}
+aside.left span ul.icons li{
+    margin-bottom: 20px;
+    list-style: none;
+}
+aside.left span ul.buttons li{
+    list-style: none;
+    margin-bottom: 20px;
+}
+aside.left span ul.buttons li a img{
+    display: none;
+}
+aside.left span:hover ul.icons li{
+    display: none;
+}
+aside.left span:hover ul.buttons li a img{
+    display: block;
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px 5px #04383f);
+}
+aside.left span ul.buttons li a img:hover{
+    animation: icons 1s linear;
+}
+aside.left span:hover{
+    padding-left: 10px;
+}
+
+/* bottom button css */
+
+.btn button{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    height: 45px;
+    width: 45px;
+    border-radius: 10px;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.btn button a{
+    text-decoration: none;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+}
+.btn button:hover{
+    transition: all .5s linear;
+    background: #032a30;
+}
+
+/* page two css */
+/* page two css */
+/* page two css */
+
+main .catalogue {
+    transition: all 1px linear;
+}
+main .catalogue h1{
+    text-align: center;
+    font-size: 70px;
+    color: #04383f;
+    margin-bottom: 30px;
+}
+main .catalogue .border{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .catalogue .border .br{
+    height: 10px;
+    background:  #04383f;
+    width: 50vh;
+    border: 0;
+    border-radius: 20px;
+    align-content: center;
+    transition: all 1px linear;
+}
+main .catalogue:hover .border .br{
+    width: 70vh;
+    box-shadow: -5px -5px 10px #1d5f68;
+}
+main .catalogue .border .br:hover{
+    box-shadow: 10px 10px 20px #ffffff;
+}
+main .catalogue p{
+    text-align: center;
+    font-size: 30px;
+    color: #04383f;
+    margin-bottom: 20px;
+}
+main .catalogue h2{
+    text-align: center;
+    font-size: 30px;
+    color: #04383f;
     margin-bottom: 40px;
 }
 
-.all {
+main .catalogue .container .all{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 0.5;
 }
-
-.all .gallery {
-    background-color: #4b4b4b92;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+main .catalogue .container .all .gallery{
+    box-shadow: -5px -5px 10px #1d5f68;
+    padding: 20px 0 0 0;
+    border-radius: 10px 10px 0 0;
     margin: 20px;
-    width: 300px;
-    text-decoration: none;
+}
+main .catalogue .container .all .gallery img{
+    width: 320px;
     border-radius: 10px 10px 0 0;
 }
-
-.all .gallery img {
-    width: 290px;
-    height: 200px;
-    margin-top: 5px;
-    border-radius: 10PX 10px 0px 0px;
-}
-
-.all .gallery:hover {
-    transform: scale(1.1);
+main .catalogue .container .all .gallery:hover{
+    scale: 1.005;
     cursor: pointer;
+    box-shadow: -10px -10px 40px #1d5f68;
 }
-
-.all .desc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 15px;
-    color: rgb(0, 0, 0);
-    margin-bottom: 15px;
+main .catalogue button{
+    width: 50vh;
+    height: 10vh;
+    align-self: center;
+    justify-self: center;
+    border-radius: 40px;
+    margin-top: 20px;
+    box-shadow: 25px 25px 30px #1d5f68;
 }
-.all .desc p{
-    margin-top: 10px;
-    border-radius: 5px;
-    background-color: #fff;
-    padding: 3px;
-    width: 120px;
-    text-align: center;
-}
-
-.br {
-    border: none;
-    border-top: 5px dashed black;
-    /* Adjust the thickness and style as needed */
-    margin: 20px 0;
-    /* Adjust the margin as needed */
-}
-
-section .catalogue h2 {
-    font-size: 30px;
-    margin: 30px;
-}
-
-section .catalogue button {
-    font-size: 30px;
-    border-radius: 10px;
-    margin-top: 50px;
-}
-
-section .catalogue button a {
-    padding: 10px;
+main .catalogue button a{
     text-decoration: none;
-    color: black;
+    font-size: 40px;
 }
 
-section .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-}
-
-section .contact h1 {
-    margin-bottom: 30px;
-    font-size: 60px;
-}
-
-section .contact ul {
-    margin-top: 80px;
-    display: flex;
-
-}
-
-section .contact ul li {
-    font-size: 24px;
-    list-style: none;
-    margin: 20px;
-    background-color: black;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-section .contact ul li a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-section .contact h3{
-    font-size: 30px;
-    padding-bottom: 80px;
-    padding-top: 20px;
-}
-@media (min-width: 1024px) {
-    section:nth-child(1) {
-        min-height: 200vh;
+@media (max-width: 1024px) {
+    header .home .title h1{
+        font-size: 90px;
     }
-
-    .home h1 {
-        font-size: 240px;
+    header .home .title h3{
+        font-size: 40px;
+    
     }
-
-    section:nth-child(2) {
-        min-height: 50vh;
-    }
-
-    nav {
+    header p{
         font-size: 30px;
     }
-}
-
-@media screen and (max-width: 644px) {
-    section {
-        width: 644px;
+    aside.right:hover ul.button li a img{
+        animation: button 1s linear ;
+    }
+    @keyframes button {       
+        0%{
+            transform: rotate(-20deg);
+        }
+        25%{
+            transform: rotate(20deg);
+        }   
+        50%{
+            transform: rotate(-20deg);
+        }   
+        100%{
+            transform: rotate(20deg);
+        }   
+    }
+    main .about .delivery{
+        display: flex;
+        flex-direction: column;
     }
 }
+@media (max-width: 1200px){
+    aside.right ul.icon li img{
+        margin: 0 80px 0 0;
+    }
+    aside.right ul.icon li img{
+        width: 60px;
+    }
+    aside.left span ul.icons li img{
+        width: 40px;
+    }
+    aside.right ul.button li a img{
+        margin: 0 80px 0 0;
+    }
+    aside.right ul.button li a img{
+        width: 60px;
+    }
+    aside.left span ul.buttons li a img{
+        width: 40px;
+    }
+    
+    main .about .ceo .card img{
+        width: 320px;
+    }
+    main .about .display .container .card img{
+        width: 320px;
+    }
+    main .about span.mark h3{
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+    main .about .points .pnts ul.icon li{
+        align-items: center;
+        width: 50vh;
+        font-size: 20px;
+    }
+    main .about .points .pnts ul.icon li{
+        border-radius: 10px;
+    }
+    /* page two css */
+    /* page two css */
+    /* page two css */
 
-@media screen and (max-width: 823px) {
-    section .contact ul li {
-        font-size: 12px;
+
+    
+    main .catalogue .container .all .gallery img{
+        width: 320px;
+    }
+    main .catalogue button{
+        width: 30vh;
+        height: 5vh;
+    }
+    main .catalogue button a{
+        text-decoration: none;
+        font-size: 20px;
     }
 }
 
-@media screen and (min-width: 768px) {
-    body {
-        min-height: 245vh;
+@media (max-width: 820px){
+    header .home .title h1{
+        font-size: 50px;
     }
 }
-
-@media screen and (max-width: 960px) {
-    section .home {
-        min-height: 70vh;
+@media (max-width: 414px){
+    header .home .title h1{
+        font-size: 30px;
     }
-
-    section .about {
-        min-height: 80vh;
+    header .home .title h3{
+        font-size: 20px;
     }
-
-    section .catalogue {
-        min-height: 80vh;
+    header p{
+        font-size: 15px;
+        margin-top: 20px;
     }
-}
-@media screen and (max-width: 875px){
-    section .about section {
+    aside.right ul.icon li img{
+        margin: 0 40px 0 0;
+    }
+    aside.right ul.icon li img{
+        width: 40px;
+    }
+    aside.left span ul.icons li img{
+        width: 20px;
+    }
+    aside.right ul.button li a img{
+        margin: 0 40px 0 0;
+    }
+    aside.right ul.button li a img{
+        width: 40px;
+    }
+    aside.left span ul.buttons li a img{
+        width: 20px;
+    }aside.left span:hover ul.buttons li a img{
+        border-radius: 5px;
+    }
+    main .about h1{
+        font-size: 30px;
+    }    
+    main .about p{
+        font-size: 15px;
+    }
+    main .about .ceo h3{
+        font-size: 20px;
+    }
+    main .about .ceo .card img{
+        width: 120px;
+    }
+    main .about .display .container .card img{
+        width: 120px;
+        height: 130px;
+    }
+    main .about .payment h3{
+        font-size: 20px;
+    }
+    main .about .payment ul{
+        font-size: 15px;
+    }
+    main .about .points h2{
+        font-size: 20px;
+    }
+    main .about .points .pnts ul.icon li{
+        align-items: center;
+        width: 30vh;
+        font-size: 15px;
+    }
+    main .about .points .pnts ul.icon li{
+        border-radius: 10px;
+    }
+    main .about span.mark h3{
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    main .about span.mark h2{
+        font-size: 20px;
+    }
+    .btn button{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        height: 25px;
+        width: 25px;
+        border-radius: 5px;
+        background: gray;
+    }
+    .btn button a{
+        font-size: 30px;
+    }
+    /* page two css */
+    /* page two css */
+    /* page two css */
+
+
+    main .catalogue h1{
+        font-size: 40px;
+    }
+    main .catalogue .border .br{
+        height: 5px;
+        background:  #04383f;
+        width: 20vh;
+    }
+    main .catalogue:hover .border .br{
+        width: 30vh;
+    }
+    main .catalogue .container .all{
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
     }
-    
-    section .about section .payment {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 30px;
+    main .catalogue .container .all .gallery{
+        margin: 10px;
     }
-    
-    section .about section .payment h2 {
-        font-size: 30px;
-        margin-bottom: 20px;
+    main .catalogue .container .all .gallery img{
+        width: 280px;
     }
-    
-    section .about section .payment ul li {
-        list-style: none;
-        font-size: 24px;
-        margin-bottom: 10px;
+    main .catalogue button{
+        width: 30vh;
+        height: 5vh;
     }
-    
-    section .about section .points {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    section .about section .points h2 {
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    
-    section .about section .points ul li {
-        list-style: none;
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    section .about h2 {
+    main .catalogue button a{
+        text-decoration: none;
         font-size: 20px;
-        margin: 20px;
+    }
+    main .catalogue .container .all .gallery .desc h3{
+        font-size: 15px;
+    }
+    main .catalogue .container .all .gallery .desc p{
+        font-size: 20px;
     }
 }
+@media (max-width: 320px){
+    aside.right ul.icon li img{
+        margin: 0 40px 0 0;
+    }
+    aside.right ul.icon li img{
+        width: 30px;
+    }
+    aside.right ul.button li a img{
+        margin: 0 30px 0 0;
+    }
+    aside.right ul.button li a img{
+        width: 30px;
+    }
+    aside.left span:hover ul.buttons li a img{
+        border-radius: 5px;
+    }
+    main .about span.mark h3{
+        font-size: 15px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    main .about span.mark h2{
+        font-size: 15px;
+    }
+}
+@media (max-width: 200px){
+    header .home .title h1{
+        font-size: 15px;
+    }
+    header .home .title h3{
+        font-size: 10px;
+    }
+    header p{
+        font-size: 10px;
+        margin-top: 20px;
+    }
+    aside.right ul.icon li img{
+        margin: 0 10px 0 0;
+    }
+    aside.right ul.icon li img{
+        width: 20px;
+    }
+    aside.left span ul.icons li img{
+        width: 20px;
+    }
+    aside.right ul.button li a img{
+        margin: 0 10px 0 0;
+    }
+    aside.right ul.button li a img{
+        width: 20px;
+    }
+    aside.left span ul.buttons li a img{
+        width: 20px;
+    }aside.left span:hover ul.buttons li a img{
+        border-radius: 2px;
+    }
+    main .about h1{
+        font-size: 20px;
+    }    
+    main .about p{
+        font-size: 10px;
+    }
+    main .about .ceo h3{
+        font-size: 10px;
+    }
+    main .about .ceo .card img{
+        width: 60px;
+    }
+    main .about .display .container .card{
+        margin-right: 2px;
+    }
+    main .about .display .container .card img{
+        width: 60px;
+        height: 50px;
+    }
+    main .about .payment h3{
+        font-size: 10px;
+    }
+    main .about .payment ul{
+        font-size: 10px;
+    }
+    main .about .points h2{
+        font-size: 10px;
+    }
+    main .about .points .pnts ul.icon li{
+        font-size: 10px;
+        width: 120px;
+    }
+    main .about .points .pnts ul.icon li a img{
+        width: 20px;
+    }
+    main .about span.mark h3{
+        font-size: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    main .about span.mark h2{
+        font-size: 10px;
+    }
+    .btn button{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        height: 25px;
+        width: 25px;
+        border-radius: 5px;
+        background: gray;
+    }
+    .btn button a{
+        font-size: 30px;
+    }
+    /* page two css */
+    /* page two css */
+    /* page two css */
+
+
+    main .catalogue h1{
+        font-size: 20px;
+    }
+    main .catalogue p{
+        font-size: 10px;
+    }
+    main .catalogue h2{
+        font-size: 20px;
+    }
+    main .catalogue .border .br{
+        height: 5px;
+        background:  #04383f;
+        width: 20vh;
+    }
+    main .catalogue:hover .border .br{
+        width: 40vh;
+    }
+    main .catalogue .container .all{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    main .catalogue .container .all .gallery{
+        margin: 10px;
+    }
+    main .catalogue .container .all .gallery img{
+        width: 120px;
+    }
+    main .catalogue button{
+        width: 50vh;
+        height: 15vh;
+    }
+    main .catalogue button a{
+        text-decoration: none;
+        font-size: 10px;
+    }
+    main .catalogue .container .all .gallery .desc h3{
+        font-size: 10px;
+    }
+    main .catalogue .container .all .gallery .desc p{
+        font-size: 10px;
+    }
+}
+
+/* non background items*/
